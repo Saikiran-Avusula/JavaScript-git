@@ -47,7 +47,7 @@ console.log(Boolean("0")); // true
 // two arrays using the === operator, JavaScript checks whether the two arrays
 // are the same object, not whether they have the same contents and 
 // they have different memory address to store values.
-console.log([] === []); // false 
+console.log([]===[]); // false 
 
 // 10.	What is the value of typeof Infinity?
 // Answer: The value of typeof Infinity is "number". This is because
