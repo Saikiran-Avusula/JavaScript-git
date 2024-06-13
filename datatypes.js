@@ -65,8 +65,3 @@ console.log({} === {}); // false
 // is a numeric value that represents an invalid or unreliable numeric operation.
 console.log(typeof NaN); // "number"
 
-
-
-
-let boolean="false"
-console.log(5!="3")
