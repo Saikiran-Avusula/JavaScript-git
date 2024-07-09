@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1 {
+        border: 1px solid;
+        width: 35rem;
+    }
+
+    form {
+        font-size: 25px;
+    }
+
+    input {
+        padding: 5px;
+    }
+
+    input[type=number] {
+        font-size: 25px;
+    }
+
+    input[type=submit] {
+        font-size: 15px;
+    }
+</style>
+
+<body>
+    <form id="myform">
+
+        <label for="num">
+            Enter Number: <input type="num" id="num">
+        </label>
+
+        <input type="submit" id="btn">
+        <h2 id="text"></h2>
+    </form>
+
+</body>
+<script>
+    let form = document.getElementById("myform");
+    const text = document.getElementById("text")
+    let btn = document.getElementById("btn");
+
+    let ip = document.getElementById("num");
+    btn.addEventListener("click", () => {
+        btn.style.backgroundColor = "Green"
+        btn.style.color = "white"
+        btn.style.fontSize = "20px"
+    })
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        var num = parseInt(ip.value)
+        var store = 1;
+        for (let i = num; i > 0; i--) {
+            store = store * i
+        }
+        text.innerHTML = `Factorial of ${num} is "${store}"`
+    })
+</script>
+
+</html>

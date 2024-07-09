@@ -1,0 +1,65 @@
+<!-- 1.random color change for text -15mins
+2.using form events check whether input is even or odd.
+3.find the factorial of num using form inputs.
+4.password visibility/hidden using form inputs and events.
+5.otp generator using dom   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .h1text {
+            margin-left: 50px;
+            padding: 50px;
+            width: 200px;
+            border: 2px solid;
+            text-align: center
+        }
+        button {
+            margin-left: 150px;
+        }
+    </style>
+</head>
+<h1>Random color change for text</h1>
+<h1 id="h1text" class="h1text">I can change my color !</h1>
+<button id="btn">Click me</button>
+</h1>
+
+<body>
+    <script>
+        let h1text = document.getElementById("h1text");
+        let btn = document.getElementById("btn");
+        btn.style.color = "red";
+        btn.addEventListener("click", () => {
+            const randomColor = getRandomColor();
+            h1text.style.color = randomColor;
+        })
+
+        //code generate random colors
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 10)];
+            }
+            return color
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+</script>
+
+</html>

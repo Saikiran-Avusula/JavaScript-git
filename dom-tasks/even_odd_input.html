@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1 {
+        border: 1px solid;
+        width: 35rem;
+    }
+
+    form {
+        font-size: 25px;
+    }
+
+    input {
+        padding: 5px;
+    }
+
+    input[type=number] {
+        font-size: 25px;
+    }
+
+    input[type=submit] {
+        font-size: 25px;
+    }
+</style>
+
+<body>
+    <form id="myForm">
+
+        <label for="num">
+            Enter a Number:<input type="number" id="num">
+        </label>
+        <input type="submit" id="btn">
+        <h1 id="text"></h1>
+    </form>
+
+    <script>
+        let form = document.getElementById("myForm");
+        const text = document.getElementById("text");
+        let btn = document.getElementById("btn");
+
+        let ip = document.getElementById("num");
+        btn.addEventListener("click", () => {
+            btn.style.backgroundColor = "Green"
+            btn.style.color = "white"
+            btn.style.fontSize = "25px"
+        })
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            var num = parseInt(ip.value) //ip.value it stores the input value
+            if (num % 2 == 0) {
+                text.innerHTML = `${num} is Even Number`
+                console.log(ip)
+            }
+            else {
+                text.innerHTML = `${num} is odd number`
+            }
+
+        })
+
+
+    </script>
+</body>
+
+</html>
