@@ -33,13 +33,10 @@
 </head>
 
 <body>
-    <!-- <div id="gp">grand parent
-    <div id="pt"> parent
-      <div id="cd">
-        child
-      </div>
-    </div>
-  </div> -->
+    <h3>Using local storage and session storage.
+        <br>Store the data from forms using dom and display the same data in
+        webpage in lists format.
+    </h3>
 
     <form action="" id="myform">
         <label for="name">
@@ -77,13 +74,13 @@
 
         localStorage.setItem("empdeatils", JSON.stringify(box))
         sessionStorage.setItem("empdeatils", JSON.stringify(box))
-    
+
         let displayList = document.createElement("li");
         displayList.id = "display-list";
 
         displayList.innerHTML = `name : ${box.name} and password : ${box.pswd}`
         document.getElementById('ol').appendChild(displayList)
-        
+
 
         // localStorage.clear("")
     })
