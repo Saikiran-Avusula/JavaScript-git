@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            font-size: 20px;
+        }
+
+        #gp {
+            border: 2px solid black;
+            padding: 2em;
+            background-color: aqua;
+            width: 20em;
+        }
+
+        #pt {
+            border: 2px solid blue;
+            padding: 2em;
+            background-color: antiquewhite;
+
+        }
+
+        #cd {
+            border: 2px solid red;
+            padding: 2em;
+            background-color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="gp">grand parent
+    <div id="pt"> parent
+      <div id="cd">
+        child
+      </div>
+    </div>
+  </div> -->
+
+    <form action="" id="myform">
+        <label for="name">
+            Name: <input type="text" id="name">
+        </label>
+        <label for="pswd">
+            Password: <input type="password" id="pswd">
+        </label>
+
+        <input type="submit" id="btn">
+
+        <ol id="ol">
+
+        </ol>
+
+    </form>
+
+
+</body>
+<script>
+    let form = document.getElementById("myform");
+    let name = document.getElementById("name");
+    let pswd = document.getElementById("pswd");
+    let btn = document.getElementById("btn");
+    let ol = document.getElementById("ol");
+
+    arr = [];
+    form.addEventListener("submit", (event) => {
+        event.preventDefault()
+        box = {
+            name: name.value,
+            pswd: pswd.value
+        }
+        arr.push(box)
+
+        localStorage.setItem("empdeatils", JSON.stringify(box))
+        sessionStorage.setItem("empdeatils", JSON.stringify(box))
+    
+        let displayList = document.createElement("li");
+        displayList.id = "display-list";
+
+        displayList.innerHTML = `name : ${box.name} and password : ${box.pswd}`
+        document.getElementById('ol').appendChild(displayList)
+        
+
+        // localStorage.clear("")
+    })
+
+
+</script>
+
+</html>
