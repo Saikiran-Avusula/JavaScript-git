@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #form {
+        border: 5px solid;
+        width: 20em;
+        padding: 10px;
+        margin: auto;
+    }
+
+    ol {
+        font-size: 25px;
+        margin-left: 40%;
+    }
+
+    #submit {
+        background-color: coral;
+        margin-left: auto;
+    }
+
+    label {
+        color: red;
+        font-size: 25px;
+    }
+
+    input[type] {
+        display: flex;
+        /* border-color: red; */
+        font-size: 25px;
+    }
+</style>
+
+<body>
+
+    <form action="" id="form">
+        <label for="Uname">
+            Name: <input type="text" id="name" required pattern="[a-z]{5}" title="Atelast 5 characters">
+        </label>
+        <h2 id="h2"></h2>
+        <br><br>
+        <label for="pswd">
+            Password: <input type="password" id="pswd" required>
+        </label>
+        <h2 id="h2"></h2>
+        <br>
+        <input type="submit" id="submit">
+    </form>
+    <ol id="ol"></ol>
+</body>
+<script>
+    let form = document.getElementById("form");
+    let name = document.getElementById("name");
+    let pswd = document.getElementById("pswd");
+    let h2 = document.getElementById("h2");
+    let submit = document.getElementById("submit");
+
+    array = [];
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        for (i of array) {
+            if (i.name == name.value) {
+                h2.innerHTML = "Name already exists !";
+                name.value = "";
+                pswd.value = "";
+            }
+
+        }
+
+        let obj = {
+            name: name.value,
+            pswd: pswd.value
+        }
+        array.push(obj);
+
+        if (name.value && pswd.value != "") // moves to this if name& value is not empty
+        {
+            localStorage.setItem("Deatils", JSON.stringify(array)); //converting to array to string
+            let li = document.createElement("li");
+            li.id = "li";
+            li.innerHTML = obj.name + " " + obj.pswd // printing li elemnts to browser
+            document.getElementById("ol").appendChild(li)
+            name.value = "";
+            pswd.value = "";
+        }
+    })
+
+</script>
+
+</html>
