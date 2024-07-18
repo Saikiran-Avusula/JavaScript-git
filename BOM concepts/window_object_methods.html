@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1,
+    button {
+        margin-left: 40%;
+        padding: 1%;
+        font-size: 25px;
+    }
+</style>
+
+<body>
+    <h1>Boss! Ede main window</h1>
+    <button id="btnopen">Kotta tab open chei</button>
+    <br><br>
+    <button id="btnclose">tab close chei</button>
+</body>
+
+<script>
+
+    let btnopen = document.getElementById("btnopen");
+    let ref = btnopen.addEventListener("click", () => {
+        window.open("../index.html", "", "width=500px,height=500px,left=0 ,top=0")
+    })
+
+    let btnclose = document.getElementById("btnclose");
+    btnclose.addEventListener("click", () => {
+        // ref.close()
+        ref.Close()
+    })
+
+    //changing postion of window of tab using javascript not ny manually
+    // let btnmove = document.getElementById("btnmove");
+    // btnmove.addEventListener("click", () => {
+    //     ref.moveTo(500, 500)
+    // })
+
+    // llry moveBy()
+
+</script>
+
+</html>
