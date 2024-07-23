@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    span {
+        font-size: 50px;
+    }
+</style>
+
+<body>
+    <span id="spanSeconds"></span><br>
+    <button id="buttonStart">Start</button>
+    <button id="buttonStop">Stop</button>
+
+
+</body>
+<script>
+    // seconds
+    let spanSeconds = document.getElementById("spanSeconds");
+    let buttonStart = document.getElementById("buttonStart");
+    let buttonStop = document.getElementById("buttonStop")
+
+    // Minutes
+    let spanMins = document.getElementById("spanMins");
+
+    buttonStart.addEventListener("click", watch);
+    buttonStop.addEventListener("click", stop);
+
+    function watch() {
+        i = 0;
+        let x = setInterval((e) => {
+            e.preventDefault();
+            spanSeconds.innerHTML = i;
+            i++;
+
+        }, 1000);
+    }
+
+    function stop() {
+        clearInterval(x)
+    }
+    stop()
+
+
+</script>
+
+<!-- 00: 01: 59-->

@@ -7,15 +7,25 @@
     <title>Document</title>
 </head>
 <style>
-    h1 {
-        font-size: 50px;
-        color: red;
-        text-align: center;
-    }
+
 </style>
 
 <body>
-    <h1>edi testing purpose doc.</h1>
+    <!-- <h1>edi testing purpose doc.</h1> -->
+    <button id="btn">Nannu Ottu</button>
+    <h1 id="h1"></h1>
 </body>
+
+<script>
+    let btn = document.getElementById("btn");
+    let h1 = document.getElementById("h1");
+
+    //button action
+    btn.addEventListener("click", () => {
+    btn.style.backgroundColor = "red"
+    h1.innerHTML = "button ottavu";
+    })
+    // 
+</script>
 
 </html>

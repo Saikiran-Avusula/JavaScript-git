@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        border: 10px solid rgb(228, 120, 120);
+        border-radius: 10px;
+        width: 15em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 40px;
+        padding: 1em;
+        margin-top: 5.5em;
+        margin-left: 13em;
+        background-color: rgb(237, 237, 237);
+        box-shadow: -5px 5px 5px black;
+    }
+
+    h2 {
+        border: 2px solid;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: -2px 2px 5px black;
+    }
+
+    button {
+        font-size: 30px;
+        /* border: 3px double; */
+        margin-top: 2em;
+        border-radius: 12px;
+        padding: .2em;
+        background-color: aquamarine;
+        box-shadow: -2px 2px 2px blue;
+    }
+</style>
+
+<body>
+    <h3>Stop Watch</h3> <br>
+
+    <h2 id="timer">00 : 00 : 00 : 000</h2>
+    <div>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="restart">Restart</button>
+    </div>
+</body>
+
+<script>
+    let timer = document.getElementById("timer");
+    let start = document.getElementById("start");
+    let timerStop = document.getElementById("stop");
+    let restart = document.getElementById("restart");
+    let millisec = 0, seconds = 0, minutes = 0, hours = 0;
+    let timeReference;
+
+    start.addEventListener("click", () => {
+        timeReference = setInterval(updateTime, 10);
+    });
+
+    timerStop.addEventListener("click", () => {
+        clearInterval(timeReference);
+    });
+
+    restart.addEventListener("click", () => {
+        clearInterval(timeReference);
+        millisec = 0, seconds = 0, minutes = 0, hours = 0;
+        timer.innerHTML = "00 : 00 : 00 : 000";
+    });
+
+    function updateTime() {
+        millisec += 10;
+        if (millisec == 1000) {
+            seconds++;
+            millisec = 0;
+            if (seconds == 60) {
+                minutes++;
+                seconds = 0;
+            }
+            if (minutes == 60) {
+                hours++;
+                minutes = 0;
+            }
+        }
+
+        let hr = hours < 10 ? "0" + hours : hours;
+        let min = minutes < 10 ? "0" + minutes : minutes;
+        let sec = seconds < 10 ? "0" + seconds : seconds;
+        let mSec = millisec < 10 ? "00" + millisec : millisec < 100 ? "0" + millisec : millisec;
+
+        timer.innerHTML = `${hr} : ${min} : ${sec} : ${mSec}`;
+    }
+
+
+
+</script>
+
+</html>

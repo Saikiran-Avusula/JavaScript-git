@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Output: </h1>
+    <button id="btn">Stop</button>
+    <h1 id="h1"></h1>
+    <ol id="ol"></ol>
+
+
+</body>
+<script>
+    let ol = document.getElementById("ol");
+    let btn = document.getElementById("btn");
+    let h1 = document.getElementById("h1")
+
+    let i = 1;
+    let a = setInterval(() => {
+
+        let li = document.createElement("li");
+        li.id = "id"
+        let x = document.getElementById("ol").appendChild(li);
+        // x.innerHTML = i;
+        h1.innerHTML = i++
+        x.style.listStyleType = "none"
+
+    }, 1000);
+
+    btn.addEventListener("click", () => {
+        clearInterval(a)
+    })
+
+
+
+
+</script>
+
+</html>
+
+
+<ol id="ol"></ol>

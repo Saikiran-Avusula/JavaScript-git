@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="form">
+        <label for="label">
+            Enter a number to print tables: <input type="text" id="input">
+        </label>
+        <input type="submit" value="Print" id="btn">
+        <h3 id="h3"></h3>
+        <ol id="ol"></ol>
+        </h3>
+    </form>
+</body>
+<script>
+
+    let form = document.getElementById("form");
+    let input = document.getElementById("input");
+    let ol = document.getElementById("ol");
+    let btn = document.getElementById("btn");
+    let h3 = document.getElementById("h3")
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        btn.style.backgroundColor = "red"
+        counter = 1;
+        if (input.value != "") {
+            let printTable = setInterval(() => {
+                let output = (`${input.value} * ${counter} = ${input.value * counter}`);
+                if (counter == 10) {
+                    clearInterval(printTable)
+                }
+                counter++;
+
+                let li = document.createElement("li");
+                li.id = "id";
+                li.style.listStyleType = "none"
+
+                let x = document.getElementById("ol").appendChild(li);
+                x.style.color = "red"
+                x.innerHTML = output;
+
+            }, 1000); //1ms 
+        }
+        else {
+            h3.innerHTML = "Please enter any number dude!"
+        }
+    })
+
+
+</script>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- promises : these are used to async operations:
+ these will be in three states:
+ 1. Pending
+ 2. Fullfilled
+ 3. Rejected
+ 
+Promises is an object which have arguments as for every execution 
+1.Fullfilled(resolve) & 2. Reject
+
+-->
+</body>
+<script>
+    // function sai() {
+    //     setTimeout(() => {
+    //         console.log("Anna Namaste..!")
+    //     }, 1000);
+    // }
+    // sai()
+    //here, promises says it will gives sure an output to user
+
+    // syntax for promise
+    // callback function must be given
+    // const promise = new Promise((resolve, reject) => {
+    //     if (true) {
+    //         resolve("Anna Namaste..!")
+    //     } else {
+    //         reject("Rejected here!")
+    //     }
+    // });
+    // promise.then((e) => console.log(e))
+    // console.log(promise); //it prints in promises keyword in that we have
+    // like wise it will print
+    // [[Prototype]]: Promise
+    // [[PromiseState]]:"fulfilled"
+    // [[PromiseResult]]: "Anna Namaste..!"
+
+    // promise is creating restoring a space for particluar stmts in it included
+    // for an exmple if we have two functions. They will print according to timer asssgined to it
+    // function test1() {
+    //     setTimeout(() => {
+    //         console.log("this is test1 function ")
+    //     }, 2000);
+    // }
+    // test1();
+
+    // function test2() {
+    //     setTimeout(() => {
+    //         console.log("this is test2 function ")
+    //     }, 1000);
+    // }
+    // test2();
+
+    // From above example They will print according to timer asssgined to it.
+
+    // here, comes promises to play a key role. they fill print as promises even time is delay with out function 
+
+    function demo1() {
+        demoPromise1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Im demo 1");
+            }, 2000);
+        });
+
+        demoPromise1.then((e) => console.log(e));
+    }
+    function demo2() {
+        const demoPromise2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Im demo 2");
+            }, 1000);
+        });
+
+        demoPromise2.then((e) => console.log(e));
+    }
+    // output will get as : "im demo 2" then next "im demo 1" 
+    // for this we use
+    // promises chaining
+
+    demo1().then((e) => console.log(e))
+
+
+
+
+
+
+
+
+</script>
+
+</html>

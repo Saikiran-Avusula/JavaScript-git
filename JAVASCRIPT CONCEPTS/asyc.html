@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+</body>
+<script>
+    // async to behave as sync operations --> handling
+
+    // can be done in different ways
+    // 1. call backs : creates callback hell is created when more no. of call backs it makes more complex are called for this used: promises.
+    // now a days call back not using
+    // we are manually creates operations using set time out
+    // funtion 1 exicuted after 4 sec
+    // funtion 2 exicuted after 2 sec
+    // funtion 3 exicuted after 3 sec
+    // funtion 4 exicuted after 1 sec
+
+    //as per our convinient functions has to get output has when invoked function
+    // funtion 4, function 2, function 3, function 1. --> like this output
+
+    // we need output has: when we invoke function
+    //funtion 1, function 2, function 3, function 4...then how..?
+
+    // function1(function 2(function 3(function4())))--> here, depending on other function
+    // in this way we are handing the async operations, calling in a sqeuence manner.
+
+    function demo1(cbf) {
+        setTimeout(() => {
+            document.write(" 1). Start learn from HTML. ")
+            cbf();//passing function  calling for funtion demo2
+        }, 4000);
+    }
+
+    function demo2(cbf) {
+        setTimeout(() => {
+            document.write(" 2). Next Step CSS ")
+            cbf(); //passing parameter for calling funtion demo3
+        }, 3000);
+    }
+
+    function demo3(cbf) {
+        setTimeout(() => {
+            document.write(" 3). then Next Move to JavaScript ")
+            cbf();//passing parameter for calling function demo4
+        }, 2000);
+    }
+
+    function demo4() {
+        setTimeout(() => {
+            document.write(" 4). Next React and if your are perfect go with AWS ")
+        }, 1000);
+    }
+
+    // demo1();
+    // demo2();
+    // demo3();
+    // demo4();
+
+    //piramid of doom ===> callback hell 
+    // function are executed as per call back to other
+    // sequence order only
+    // of other function
+
+    demo1(() => {
+        demo2(() => {
+            demo3(() => {
+                demo4()
+            })
+        })
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 2. promises : in promises if more no. of promises are present it creates promises chaining due it has simple complexies . So, for this: asyc/await is used
+    // 3. async/await. 
+
+
+
+
+</script>
+
+</html>
